@@ -1,0 +1,8 @@
+- name:  Install all updates and reboot as many times as needed
+  hosts: wsus-tests
+  gather_facts: false
+  tasks:
+    - name: Running Windows Update
+      win_updates:
+        category_names: '*'
+        reboot: yes
